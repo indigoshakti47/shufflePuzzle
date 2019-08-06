@@ -5,7 +5,6 @@ var imagenes2 = [];
 var imagenes3 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var blanco = 3;
 var ganador = []
-
 function domloaded() {
     var canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
@@ -349,7 +348,15 @@ function finish() {
     }
     return won;
 }
+window.addEventListener('keydown', function (e) {
+    key = e.keyCode;
 
+    if (key == 13) {
+        e.preventDefault();
+        start();
+    }
+
+});
 function start() {
     ctx.clearRect(250, 250, 450, 450);
 
